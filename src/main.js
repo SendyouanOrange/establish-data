@@ -3,13 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui';
+import "./assets/icon/iconfont.css";
+import "./assets/css/common.css";
+import store from "./store";
 
-Vue.config.productionTip = false
 
-/* eslint-disable no-new */
+Vue.use(ElementUI);
+Vue.config.productionTip = false;
+// /* eslint-disable no-new */
+
+
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
+    el: '#app',
+    store,
+    router,
+    components: { App },
+    template: '<App/>'
+});

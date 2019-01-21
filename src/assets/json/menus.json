@@ -1,0 +1,11 @@
+[{
+    "code": "001",
+    "name": "列表展示",
+    "icon": "el-icon-menu",
+    "path": "/home/list"
+}, {
+    "code": "002",
+    "name": "图表展示",
+    "icon": "el-icon-document",
+    "path": "/home/chart"
+}]
