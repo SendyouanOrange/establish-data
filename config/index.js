@@ -20,9 +20,11 @@ module.exports = {
         notifyOnErrors: true,
         poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
         proxyTable: {
-            "/api": {
-                target: "http://10.0.1.27:9005",
-                pathRewrite: { "^/api": "/rest" },
+            "/establish": {
+                // target: "http://10.0.1.27:9005/",
+                target: "http://10.0.0.189",
+
+                // pathRewrite: { "^/establish": "/rest" },
                 changeOrigin: true,
                 logLevel: "debug",
             },
@@ -50,7 +52,7 @@ module.exports = {
         // Paths
         assetsRoot: path.resolve(__dirname, '../dist'),
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
+        assetsPublicPath: './',
 
         /**
          * Source Maps

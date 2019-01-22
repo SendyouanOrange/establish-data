@@ -7,7 +7,7 @@ class establishService extends Service {
      * @param {*} callback 
      */
     static getListData(payload, callback) {
-        let url = "/api/enterprise?";
+        let url = "/establish/enterprise?";
         for (let key in payload) {
             url += `${key}=${payload[key]}&`
         }
@@ -19,7 +19,7 @@ class establishService extends Service {
      * @param {*} callback 
      */
     static getOverviewData(callback) {
-        let url = '/api/enterprise/statistics';
+        let url = '/establish/enterprise/statistics';
         super.get(url, callback);
     }
     
@@ -28,7 +28,7 @@ class establishService extends Service {
      * @param {*} callback 
      */
     static getAllData(callback) {
-        let url = '/api/enterprise/list';
+        let url = '/establish/enterprise/list';
         super.get(url, callback);
     }
 
@@ -38,7 +38,7 @@ class establishService extends Service {
      * @param {*} callback 
      */
     static getChartDataByType(type,callback){
-        let url = '/api/enterprise/type?type='+type;
+        let url = '/establish/enterprise/type?type='+type;
         super.get(url,callback);
     }
 }
