@@ -22,5 +22,24 @@ class establishService extends Service {
         let url = '/api/enterprise/statistics';
         super.get(url, callback);
     }
+    
+    /**
+     * 获取不分页数据
+     * @param {*} callback 
+     */
+    static getAllData(callback) {
+        let url = '/api/enterprise/list';
+        super.get(url, callback);
+    }
+
+    /**
+     * 根据开办类别获取统计信息
+     * @param {*} type 
+     * @param {*} callback 
+     */
+    static getChartDataByType(type,callback){
+        let url = '/api/enterprise/type?type='+type;
+        super.get(url,callback);
+    }
 }
 export default establishService;

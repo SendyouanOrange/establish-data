@@ -7,6 +7,7 @@ export default new Router({
     model: 'hash',
     routes: [{
         path: '/',
+        redirect: "/home",
         name: 'login',
         component: resolve => require(["@/views/login.vue"], resolve)
     }, {

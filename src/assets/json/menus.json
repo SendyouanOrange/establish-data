@@ -1,11 +1,11 @@
 [{
-    "code": "001",
+    "code": "1",
     "name": "列表展示",
     "icon": "el-icon-menu",
     "path": "/home/list"
 }, {
-    "code": "002",
-    "name": "图表展示",
+    "code": "2",
+    "name": "统计信息",
     "icon": "el-icon-document",
     "path": "/home/chart"
 }]

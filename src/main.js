@@ -7,7 +7,12 @@ import ElementUI from 'element-ui';
 import "./assets/icon/iconfont.css";
 import "./assets/css/common.css";
 import store from "./store";
+import echarts from "echarts";
+import moment from "moment";
 
+// 赋值使用echart
+Vue.prototype.$echarts = echarts;
+Vue.prototype.$moment = moment;
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;

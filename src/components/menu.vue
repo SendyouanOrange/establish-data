@@ -10,7 +10,7 @@
       </div>
     </el-tooltip>
     <el-menu
-      default-active="1"
+      :default-active="active"
       class="el-menu-vertical-demo"
       background-color="#545c64"
       text-color="#fff"
@@ -20,7 +20,7 @@
       <el-menu-item
         v-for="(d,i) in menus"
         :key="i"
-        :index="i+1+''"
+        :index="d.code"
         @click="redirectTo(d.path)"
       >
         <i :class="d.icon"></i>
@@ -33,11 +33,12 @@
 <script>
 import { mapState, mapActions } from "vuex";
 import menus from "../assets/json/menus.json";
-
+import U from "../utils/u.js";
 export default {
   data() {
     return {
       menus,
+      active:'1',
       isCollapse: false,
       menuWidth: "200px"
     };
@@ -56,6 +57,15 @@ export default {
         this.menuWidth = "200px";
       }
     }
+  },
+  created(){
+    //根据路由判断左侧选中菜单
+    let path=this.$route.path;
+    U.traverseTreeData(menus,'children',(item)=>{
+      if(item.path===path){
+        this.active=item.code;
+      }
+    })
   },
   methods: {
     ...mapActions({
